@@ -1,0 +1,25 @@
+{
+  "name": "20.05.23",
+  "version": "1.0.0",
+  "description": "practice 20/05/23",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EvgenStb/20.05.23.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EvgenStb/20.05.23/issues"
+  },
+  "homepage": "https://github.com/EvgenStb/20.05.23#readme",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "joi": "^17.9.2",
+    "yargs": "^17.7.2"
+  }
+}
