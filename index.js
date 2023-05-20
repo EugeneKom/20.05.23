@@ -1,20 +1,21 @@
 const argv = require("yargs").argv;
-const {createFile} = require('./files')
+const { createFile, getFiles, getFile } = require('./files')
 
 
 // TODO: рефакторить
 async function invokeAction({ action, fileName, content }) {
   switch (action) {
+
     case "create":
-        await createFile(fileName, content);
+      await createFile(fileName, content);
       break;
 
-    case "":
-      // ... name email phone
+    case "get":
+      getFiles();
       break;
 
-    case "":
-      // ... id
+    case "getFile":
+      getFile(fileName);
       break;
 
     default:
