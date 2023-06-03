@@ -1,26 +1,12 @@
-const argv = require("yargs").argv;
-const { createFile, getFiles, getFile } = require('./files')
+const express = require("express");
+const morgan = require("morgan");
+const router = require("./router-js/router");
 
+const app = express();
 
-// TODO: рефакторить
-async function invokeAction({ action, fileName, content }) {
-  switch (action) {
+app.use(morgan("combined"));
+app.use(express.json());
 
-    case "create":
-      await createFile(fileName, content);
-      break;
+app.use("/api/files", router);
 
-    case "get":
-      getFiles();
-      break;
-
-    case "getFile":
-      getFile(fileName);
-      break;
-
-    default:
-      console.warn("\x1B[31m Unknown action type!");
-  }
-}
-
-invokeAction(argv);
+app.listen(3000, () => console.log("Start server"));
